@@ -1,16 +1,22 @@
 import { useState } from "react"
 
-export function RegisterPassword() {
+export function RegisterPassword({ onChange }) {
 
   const [password, setPassword] = useState('')
-  const onHandleClick = () => {
-    setPassword(password)
+
+  const handleInputChange = (e) => {
+    const newPassword = e.target.value
+    setPassword(newPassword)
+
+    if(onChange) {
+      onChange(newPassword)
+    }
   }
 
   return (
     <input 
     type="password"
-    value={setPassword}
-     onClick={onHandleClick}/>
+    value={password}
+    onChange={handleInputChange}/>
   )
 }

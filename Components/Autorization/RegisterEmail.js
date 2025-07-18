@@ -3,7 +3,7 @@ export function RegisterEmail({ onChange }) {
     <input 
     type="email"
     placeholder="Введите Email"
-    onChange={(e) => onchange(e.target.value) }
+    onChange={(e) => onChange(e.target.value) }
      />
   )
 }
